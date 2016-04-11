@@ -1,0 +1,34 @@
+{
+  "name": "react-typescript-starter",
+  "version": "1.0.0",
+  "description": "Boilerplate project that uses Typescript, React, and Webpack",
+  "main": "src/main.tsx",
+  "scripts": {
+    "clean": "rimraf build/**",
+    "build": "npm run clean && npm run build:webpack && npm run build:html",
+    "build:html": "cp src/index.html build/index.html",
+    "build:webpack": "NODE_ENV=production webpack -p",
+    "start": "npm run build:html && webpack-dev-server --inline --hot",
+    "typings": "typings",
+    "postinstall": "typings install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leon Radley (leon)",
+  "devDependencies": {
+    "es6-promise": "^3.1.2",
+    "rimraf": "^2.5.2",
+    "ts-loader": "^0.8.1",
+    "tslint": "^3.3.0",
+    "tslint-loader": "^2.1.0",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.12",
+    "webpack": "2.1.0-beta.4",
+    "webpack-dev-server": "2.0.0-beta"
+  },
+  "dependencies": {
+    "core-js": "^2.2.2",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "rxjs": "5.0.0-beta.5"
+  }
+}
